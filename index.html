@@ -1,0 +1,87 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacs Tools 0.1</title>
+    <link rel="stylesheet" href="css/uikit.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/uikit.min.js"></script>
+    <script src="js/uikit-icons.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <div class="alert">
+        <div class="uk-alert-primary" uk-alert>
+            <a class="uk-alert-close" uk-close></a>
+            <p id="alert-message"></p>
+        </div>
+    </div>
+    <nav class="uk-navbar-container" uk-navbar>
+        <div class="uk-navbar-left">
+            <ul class="uk-navbar-nav">
+                <li class="uk-active"><a href="">Pacs Tools</a></li>
+            </ul>
+        </div>
+    </nav>
+    <hr>
+    <div class="uk-container uk-container-large">
+        <div class="uk grid uk-flex-center" uk-grid>
+            <div>
+                <h3>Сейчас в базе: <span id="current-modalities">0</span></h3>
+            </div>
+        </div>
+        <hr>
+        <div class="uk-container uk-container-large">
+            <div>
+                <form id="add-new-modality-form" class="uk-grid-small" uk-grid>
+                    <div class="uk-width-1-4@s">
+                        <input class="uk-input" name="AET" type="text" placeholder="AET">
+                    </div>
+                    <div class="uk-width-1-4@s">
+                        <input class="uk-input" name="Host" type="text" placeholder="HOST">
+                    </div>
+                    <div class="uk-width-1-4@s">
+                        <input class="uk-input" name="Port" type="text" placeholder="PORT">
+                    </div>
+                    <div class="uk-width-1-4@s">
+                        <button type="submit" class="uk-button uk-width-1-1 uk-button-primary">Добавить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <hr>
+        <div class="uk-container uk-container-large">
+            <div class="dropper">
+                <ul class="uk-nav uk-nav-default">
+                  <li class="uk-nav-header">Удалить <strong id="dropdown-modality-name"></strong> ?</li>
+                  <button class="uk-button uk-button-danger uk-width-1-1" id="dropdown-delete-modality-button">Удалить</button>
+                  <button class="uk-button uk-button-default uk-width-1-1" id="dropdown-close-dropdown-button">Закрыть</button>
+              </ul>
+              </div>
+            <div>
+                <table id="modalities-table" class="uk-table uk-table-hover uk-table-divider">
+                    <thead>
+                        <tr>
+                            <th>Modality</th>
+                            <th>AET</th>
+                            <th>Hostname</th>
+                            <th>Port</th>
+                        </tr>
+                    </thead>
+                    <tbody id="modalities-table-body">
+                        <tr id="try-load-modalities">
+                            <td></td>
+                            <td uk-spinner="ratio: 3"></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
