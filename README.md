@@ -15,3 +15,5 @@ A simple web application to manage Orthanc modalities in database.
   "/pacstools" : "/home/%user%/www/pacstools"
   },
 4. Browse to http://<Orthanc IP>:8042/pacstools/index.html
+
+Tested with Orthanc 1.7.3
