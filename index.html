@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pacs Tools 0.1</title>
+    <title>Pacs Tools 0.2</title>
     <link rel="stylesheet" href="css/uikit.min.css">
     <link rel="stylesheet" href="css/main.css">
     <script src="js/uikit.min.js"></script>
@@ -23,6 +23,7 @@
         <div class="uk-navbar-left">
             <ul class="uk-navbar-nav">
                 <li class="uk-active"><a href="">Pacs Tools</a></li>
+                <li><a href="/">Orthanc Explorer</a></li>
             </ul>
         </div>
     </nav>
@@ -31,6 +32,12 @@
         <div class="uk grid uk-flex-center" uk-grid>
             <div>
                 <h3>Сейчас в базе: <span id="current-modalities">0</span></h3>
+            </div>
+            <div>
+                <h3>Количество пациентов: <span id="current-patients">0</span></h3>
+            </div>
+            <div>
+                <h3>Количество исследованией: <span id="current-studies">0</span></h3>
             </div>
         </div>
         <hr>

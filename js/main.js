@@ -4,6 +4,16 @@ $(window).on('load', function (e) {
     addNewModality();
     updateModalityTable();
     rigthClickOnTableContextMenu();
+    getCurrentPatients();
+    getCurrentStudies();
+    $('#add-new-modality-form input[type="text"]').blur(function(){
+        if (!$(this).val()) {
+            $(this).addClass('uk-form-danger');
+        } else {
+            $(this).removeClass('uk-form-danger');
+            $(this).addClass('uk-form-success');
+        }
+    })
 });
 function getCurrentModalitiesCount(){
     $.ajax({
@@ -119,6 +129,28 @@ function updateModalityTable(){
         }
     })
     
+}
+
+function getCurrentPatients(){
+    var sign = $('#current-patients');
+    $.ajax({
+        url: orthanc_address + "/patients",
+        method: "GET",
+        success: function(data){
+            sign.text(data.length);
+        }
+    })
+}
+
+function getCurrentStudies(){
+    var sign = $('#current-studies');
+    $.ajax({
+        url: orthanc_address + "/studies",
+        method: "GET",
+        success: function(data){
+            sign.text(data.length);
+        }
+    })
 }
 
 function getFormData($form){
