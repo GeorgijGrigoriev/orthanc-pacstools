@@ -23,7 +23,7 @@ function getCurrentModalitiesCount(){
         $('#current-modalities').empty().text(data.length);
     },
     fail: function(data){
-        alertToUser("Невозможно получить данные. Ответ сервера: " + data);
+        alertToUser("Unable to get data. Original message: " + data);
     }
 });
 }
@@ -41,11 +41,11 @@ function addNewModality(){
             success: function(data){
                 updateModalityTable();
                 getCurrentModalitiesCount();
-                alertToUser("Новая модальность успешно добавлена.");
+                alertToUser("New modality added succesfully");
                 $self.find("input[type=text]").val("");
             },
             fail: function(data){
-                alertToUser("Ошибка при добавление. Ответ сервера: " + data);
+                alertToUser("Unable to add modality. Original message: " + data);
             }
         })
     });
@@ -77,12 +77,12 @@ function rigthClickOnTableContextMenu(){
             url: orthanc_address + "/modalities/" + modalityToDelete,
             method: "DELETE",
             success: function(){
-                alertToUser('Модальность ' + modalityToDelete + ' успешно удалена.');
+                alertToUser('Modality ' + modalityToDelete + ' deleted succesfully.');
                 updateModalityTable();
                 getCurrentModalitiesCount();
             },
             fail: function(){
-                alertToUser('Невозможно удалить модальность.');
+                alertToUser('Unable to delete modality.');
             }
         })
     });
@@ -125,7 +125,7 @@ function updateModalityTable(){
 
         },
         fail: function(data){
-            alertToUser("Невозможно загрузить данные. Ответ сервера: " + data);
+            alertToUser("Unable to get data. Original message: " + data);
         }
     })
     
