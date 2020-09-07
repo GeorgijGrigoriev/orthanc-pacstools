@@ -6,6 +6,7 @@ A simple web application to manage Orthanc modalities in database.
 * Orthanc server
 * ServeFolders plugin
 * ModalitiesInDatabase option in Orthanc config is switched to true
+* PostgreSQL/MySQL Plugin installed
 
 ## How-to use:
 1. Download files from this repository
